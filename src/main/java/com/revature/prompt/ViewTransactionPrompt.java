@@ -9,7 +9,7 @@ import com.revature.dao.DatabaseDaoImpl;
 import com.revature.dao.UserDao;
 import com.revature.models.Account;
 
-public class RemoveAccountPrompt implements Prompt {
+public class ViewTransactionPrompt implements Prompt {
 
 	DatabaseDao dbDao = new DatabaseDaoImpl();
 	UserDao user = UserDao.currentImplementation;
@@ -18,12 +18,10 @@ public class RemoveAccountPrompt implements Prompt {
 
 	@Override
 	public Prompt run() {
-		System.out.println("input which account you would like to delete: ");
 		int selection = -1;
 		while (selection != 0) {
 			dbDao.getAccountInformation(user.getAccountId());
 			List<Account> accounts = accountDao.getAccounts();
-
 			System.out.println("All Accounts for " + user.getName() + ": ");
 			System.out.println("Please enter a number\n0. To go back.");
 			int totalAccounts = 1;
@@ -47,21 +45,21 @@ public class RemoveAccountPrompt implements Prompt {
 				selection = scan.nextInt();
 				scan.nextLine();
 			}
-			promptSelection(selection, accounts);
+			accountSelectionLogic(selection, accounts);
 			accounts.clear();
 		}
 		return new UserMenuPrompt();
 	}
 
-	private void promptSelection(int selection, List<Account> account) {
-		for (int i = 0; i < account.size(); i++) {
+	private void accountSelectionLogic(int selection, List<Account> accounts) {
+		for (int i = 0; i < accounts.size(); i++) {
 			if (i + 1 == selection) {
-				if (account.get(i).getAccountBalance() != 0) {
-					System.out.println("Sorry, your account must be at $0.00 before it can be closed.");
-				} else {
-					dbDao.updateDeleteAccount(account.get(i).getAccountId(), user.getAccountId());
-				}
+				transactionHistory(accounts.get(i).getAccountId());
 			}
 		}
+	}
+
+	private void transactionHistory(int accountId) {
+		dbDao.displayTransactionInformation(accountId, user.getAccountId());
 	}
 }

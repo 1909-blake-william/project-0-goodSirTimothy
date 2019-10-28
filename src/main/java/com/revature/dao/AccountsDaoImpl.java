@@ -16,13 +16,6 @@ public class AccountsDaoImpl implements AccountDao{
 	}
 
 	@Override
-	public void resetArrayList() {
-		accounts.clear();
-		
-	}
-
-
-	@Override
 	public List<Account> getAccounts() {
 		return accounts;
 	}

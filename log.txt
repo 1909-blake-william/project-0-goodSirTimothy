@@ -328,3 +328,109 @@
 2019-10-26 21:06:16 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
 2019-10-26 21:06:18 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
 2019-10-26 21:06:18 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 12:40:32 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 12:41:57 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 12:42:06 INFO  DatabaseDaoImpl:137 - User found
+2019-10-27 12:42:06 INFO  DatabaseDaoImpl:167 - Logging in
+2019-10-27 12:42:06 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 12:42:12 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-27 12:42:12 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 12:46:34 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 12:46:42 INFO  DatabaseDaoImpl:137 - User found
+2019-10-27 12:46:43 INFO  DatabaseDaoImpl:167 - Logging in
+2019-10-27 12:46:43 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 12:46:44 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-27 12:46:45 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 13:06:13 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 13:06:22 INFO  DatabaseDaoImpl:137 - User found
+2019-10-27 13:06:22 INFO  DatabaseDaoImpl:167 - Logging in
+2019-10-27 13:06:22 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 13:06:24 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-27 13:06:24 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 13:06:52 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 13:09:53 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 13:10:00 INFO  DatabaseDaoImpl:137 - User found
+2019-10-27 13:10:00 INFO  DatabaseDaoImpl:167 - Logging in
+2019-10-27 13:10:00 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 13:10:02 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-27 13:10:02 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 13:10:50 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 13:11:10 INFO  DatabaseDaoImpl:137 - User found
+2019-10-27 13:11:10 INFO  DatabaseDaoImpl:167 - Logging in
+2019-10-27 13:11:10 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 13:11:11 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-27 13:11:12 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 14:35:56 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 14:36:16 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 14:42:00 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 14:42:12 INFO  DatabaseDaoImpl:137 - User found
+2019-10-27 14:42:13 INFO  DatabaseDaoImpl:167 - Logging in
+2019-10-27 14:42:13 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 14:42:19 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-27 14:42:19 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 14:42:40 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 14:43:31 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 14:44:48 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 14:44:55 INFO  DatabaseDaoImpl:137 - User found
+2019-10-27 14:44:55 INFO  DatabaseDaoImpl:167 - Logging in
+2019-10-27 14:44:56 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 14:45:10 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-27 14:45:11 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 14:45:23 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 14:46:59 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 14:47:11 INFO  DatabaseDaoImpl:137 - User found
+2019-10-27 14:47:11 INFO  DatabaseDaoImpl:167 - Logging in
+2019-10-27 14:47:11 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 14:47:13 INFO  MainMenuDriver:20 - class com.revature.prompt.RemoveAccountPrompt
+2019-10-27 14:47:14 INFO  DatabaseDaoImpl:194 - Account information found
+2019-10-27 16:43:04 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 16:43:17 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 16:43:26 INFO  DatabaseDaoImpl:135 - User found
+2019-10-27 16:43:26 INFO  DatabaseDaoImpl:166 - Logging in
+2019-10-27 16:43:27 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 16:43:28 INFO  MainMenuDriver:20 - class com.revature.prompt.RemoveAccountPrompt
+2019-10-27 16:43:29 INFO  DatabaseDaoImpl:192 - Account information found
+2019-10-27 17:10:26 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 17:10:48 INFO  DatabaseDaoImpl:135 - User found
+2019-10-27 17:10:48 INFO  DatabaseDaoImpl:166 - Logging in
+2019-10-27 17:10:48 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 17:10:50 INFO  MainMenuDriver:20 - class com.revature.prompt.RemoveAccountPrompt
+2019-10-27 17:10:51 INFO  DatabaseDaoImpl:192 - Account information found
+2019-10-27 17:11:00 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 17:11:02 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-27 17:11:03 INFO  DatabaseDaoImpl:192 - Account information found
+2019-10-27 17:11:11 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 17:11:18 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-27 17:11:18 INFO  DatabaseDaoImpl:192 - Account information found
+2019-10-27 17:12:17 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 17:12:28 INFO  DatabaseDaoImpl:135 - User found
+2019-10-27 17:12:29 INFO  DatabaseDaoImpl:166 - Logging in
+2019-10-27 17:12:29 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 17:12:36 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-27 17:12:37 INFO  DatabaseDaoImpl:192 - Account information found
+2019-10-27 17:12:56 INFO  DatabaseDaoImpl:192 - Account information found
+2019-10-27 17:12:59 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 17:13:00 INFO  MainMenuDriver:20 - class com.revature.prompt.RemoveAccountPrompt
+2019-10-27 17:13:01 INFO  DatabaseDaoImpl:192 - Account information found
+2019-10-27 17:13:04 INFO  DatabaseDaoImpl:192 - Account information found
+2019-10-27 17:13:21 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 17:13:27 INFO  MainMenuDriver:20 - class com.revature.prompt.RemoveAccountPrompt
+2019-10-27 17:13:27 INFO  DatabaseDaoImpl:192 - Account information found
+2019-10-27 17:16:02 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 17:16:09 INFO  DatabaseDaoImpl:135 - User found
+2019-10-27 17:16:09 INFO  DatabaseDaoImpl:166 - Logging in
+2019-10-27 17:16:09 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-27 17:16:11 INFO  MainMenuDriver:20 - class com.revature.prompt.RemoveAccountPrompt
+2019-10-27 17:16:11 INFO  DatabaseDaoImpl:192 - Account information found
+2019-10-27 18:04:06 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 18:04:09 INFO  MainMenuDriver:20 - class com.revature.prompt.UserCreationPrompt
+2019-10-27 18:04:13 DEBUG DatabaseDaoImpl:162 - SQLException hit
+2019-10-27 18:04:13 INFO  DatabaseDaoImpl:166 - User not found
+2019-10-27 18:04:31 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 18:04:33 INFO  MainMenuDriver:20 - class com.revature.prompt.UserCreationPrompt
+2019-10-27 18:04:36 DEBUG DatabaseDaoImpl:162 - SQLException hit
+2019-10-27 18:04:36 INFO  DatabaseDaoImpl:166 - User not found
+2019-10-27 18:06:23 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-27 18:06:25 INFO  MainMenuDriver:20 - class com.revature.prompt.UserCreationPrompt
+2019-10-27 18:06:29 DEBUG DatabaseDaoImpl:162 - SQLException hit
+2019-10-27 18:06:29 INFO  DatabaseDaoImpl:166 - User not found

@@ -18,15 +18,18 @@ public class ViewAccountsPrompt implements Prompt {
 
 	@Override
 	public Prompt run() {
-		dbDao.getAccountInformation(user.getAccountId());
-		List<Account> accounts = accountDao.getAccounts();
 		int selection = -1;
 		while (selection != 0) {
+			dbDao.getAccountInformation(user.getAccountId());
+			List<Account> accounts = accountDao.getAccounts();
 			System.out.println("All Accounts for " + user.getName() + ": ");
 			System.out.println("Please enter a number\n0. To go back.");
 			int totalAccounts = 1;
 			for (Account account : accounts) {
-				System.out.println((totalAccounts) + ". " + account);
+				if (account.getAccountStatus() != 0) {
+					System.out.println((totalAccounts) + ". Account type: " + account.getAccountType()
+							+ ", Total Amount = $" + String.format("%.2f", account.getAccountBalance()));
+				}
 				totalAccounts++;
 			}
 			selection = scan.nextInt();
@@ -43,6 +46,7 @@ public class ViewAccountsPrompt implements Prompt {
 				scan.nextLine();
 			}
 			promptSelection(selection, accounts);
+			accounts.clear();
 		}
 		return new UserMenuPrompt();
 	}
@@ -64,6 +68,8 @@ public class ViewAccountsPrompt implements Prompt {
 	/**
 	 * 
 	 * @param id
+	 * @param balance
+	 * @param accountId
 	 */
 	private void displayWithdrawAndDeposit(int id, float balance, int accountId) {
 		int selection = -1;
@@ -74,46 +80,48 @@ public class ViewAccountsPrompt implements Prompt {
 
 			selection = scan.nextInt();
 			scan.nextLine();
-			if(selection == 1) {
-				depositMoney(id, balance, accountId);
-			} else if(selection == 2) {
-				
+			if (selection == 1) {
+				transactionAmount(id, balance, accountId, "deposited");
+				selection = 0;
+			} else if (selection == 2) {
+				transactionAmount(id, balance, accountId, "withdrawn");
+				selection = 0;
 			}
 		}
 	}
 
 	/**
-	 * If the user selects to deposit money, all them to input how much money would
-	 * would like to deposit.
+	 * 
+	 * @param id
+	 * @param balance
+	 * @param accountId
+	 * @param typeOfTransaction
 	 */
-	private void depositMoney(int id, float balance, int accountId) {
+	private void transactionAmount(int id, float balance, int accountId, String typeOfTransaction) {
 		boolean keepLoopGoing = true;
 		while (keepLoopGoing) {
-			System.out.println("Enter the amount that is being deposited");
+			System.out.println("Enter the amount that is being " + typeOfTransaction + " or enter 0 exit");
 			float amount = scan.nextFloat();
 			scan.nextLine();
-			System.out.println("Is this correct ammount: " + amount + "\nEnter 'y' for yes, 'n' for no");
-			String confirm = scan.nextLine();
-			if("y".contentEquals(confirm)) {
-				System.out.println(dbDao.updateBalance(amount, balance, accountId, user.getAccountId()));
-			}
-		}
-	}
 
-	/**
-	 * If the user selects to withdraw money, allow them to input the amount they
-	 * would like to withdraw
-	 */
-	private void withdrawMoney() {
-		boolean keepLoopGoing = true;
-		while (keepLoopGoing) {
-			System.out.println("Enter the amount that is being withdrawn");
-			int amount = scan.nextInt();
-			scan.nextLine();
-			System.out.println("Is this correct ammount: " + amount + "\nEnter 'y' for yes, 'n' for no");
+			while (amount < 0) {
+				System.out.println("Please input only positive numbers");
+				amount = scan.nextFloat();
+				scan.nextLine();
+			}
+
+			System.out.println(
+					"Is this correct amount: $" + String.format("%.2f", amount) + "\nEnter 'y' for yes, 'n' for no");
 			String confirm = scan.nextLine();
-			if("y".contentEquals(confirm)) {
-				
+
+			if ("y".equals(confirm)) {
+				if ("withdrawn".equals(typeOfTransaction)) {
+					amount = amount * -1;
+				}
+				System.out.println(dbDao.updateBalance(amount, balance, accountId, user.getAccountId()));
+				keepLoopGoing = false;
+			} else if ("0".equals(confirm)) {
+				keepLoopGoing = false;
 			}
 		}
 	}
