@@ -84,4 +84,22 @@ public interface DatabaseDao {
 	 */
 	boolean displayTransactionInformation(int accountId, int userId);
 	
+	/**
+	 * 
+	 * @return
+	 */
+	boolean displayAllUsers();
+	
+	/**
+	 * 
+	 * @return
+	 */
+	boolean displayAllAccounts();
+	
+	/**
+	 * 
+	 * @return
+	 */
+	boolean displayAllTransactions();
+	
 }

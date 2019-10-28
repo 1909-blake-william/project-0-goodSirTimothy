@@ -15,7 +15,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
 	private Logger log = Logger.getRootLogger();
 
 	/**************************************************************************************
-	 * 		UPDATE and INSERT statements to the database								  *
+	 * UPDATE and INSERT statements to the database *
 	 **************************************************************************************/
 	@Override
 	public boolean saveUserToDatabase(String username, String password, String first_name, String last_name,
@@ -120,9 +120,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
 	@Override
 	public boolean updateDeleteAccount(int accountId, int userId) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			String query = "UPDATE project_0_accounts "
-					+ "SET account_status = ? "
-					+ "WHERE account_id = ? "
+			String query = "UPDATE project_0_accounts " + "SET account_status = ? " + "WHERE account_id = ? "
 					+ "AND user_id = ?";
 
 			PreparedStatement ps = conn.prepareStatement(query);
@@ -143,7 +141,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
 	}
 
 	/**************************************************************************************
-	 * 		SELECT statements to the database											  *
+	 * SELECT statements to the database *
 	 **************************************************************************************/
 	@Override
 	public boolean checkUser(String username) {
@@ -216,8 +214,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
 	@Override
 	public boolean getAccountInformation(int userId) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			String query = "SELECT * FROM project_0_accounts "
-					+ "WHERE user_id = ?";
+			String query = "SELECT * FROM project_0_accounts " + "WHERE user_id = ?";
 
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setInt(1, userId);
@@ -243,14 +240,12 @@ public class DatabaseDaoImpl implements DatabaseDao {
 	@Override
 	public boolean displayTransactionInformation(int accountId, int userId) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			String query = "SELECT * FROM project_0_transactions "
-					+ "WHERE account_id = ? "
-					+ "AND user_id = ? ";
+			String query = "SELECT * FROM project_0_transactions " + "WHERE account_id = ? " + "AND user_id = ? ";
 
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setInt(1, accountId);
 			ps.setInt(2, userId);
-			
+
 			ResultSet rs = ps.executeQuery();
 			TransactionDao transactionDao = TransactionDaoImpl.currentImplementation;
 			while (rs.next()) {
@@ -268,8 +263,72 @@ public class DatabaseDaoImpl implements DatabaseDao {
 		return false;
 	}
 
+	@Override
+	public boolean displayAllUsers() {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			String query = "SELECT USER_ID, USERNAME, FIRST_NAME, LAST_NAME, USER_ADMIN FROM project_0_users";
+
+			PreparedStatement ps = conn.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				int userId = rs.getInt("user_id");
+				String username = rs.getString("username");
+				String firstName = rs.getString("first_name");
+				String lastName = rs.getString("lastname");
+				if (rs.getInt("") == 1) {
+					String admin = "admin";
+				} else {
+					String admin = "default";
+				}
+			}
+		} catch (SQLException e) {
+			printException("displayAllUsers", e);
+		}
+		return false;
+	}
+
+	@Override
+	public boolean displayAllAccounts() {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			String query = "SELECT * FROM project_0_accounts a"
+					+ "LEFT JOIN project_0_users u ON (a.user_id = u.user_id)";
+
+			PreparedStatement ps = conn.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				int accountId = rs.getInt("account_id");
+				String accountType = rs.getString("account_type");
+				float accountBalance = rs.getFloat("account_balance");
+				String username = rs.getString("username");
+			}
+		} catch (SQLException e) {
+			printException("displayAllAccounts", e);
+		}
+		return false;
+	}
+
+	@Override
+	public boolean displayAllTransactions() {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			String query = "SELECT * FROM project_0_transactions t"
+					+ "LEFT JOIN project_0_users u ON (t.user_id = u.user_id)";
+
+			PreparedStatement ps = conn.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				int transactionId = rs.getInt("transaction_id");
+				float transactionAmount = rs.getFloat("transaction_amount");
+				int accountId = rs.getInt("account_id");
+				String username = rs.getString("username");
+			}
+		} catch (SQLException e) {
+			printException("displayAllTransactions", e);
+		}
+		return false;
+	}
+
 	/**************************************************************************************
-	 * 		Print exceptions															  *
+	 * Print exceptions *
 	 **************************************************************************************/
 	private void printException(String method, SQLException e) {
 		log.debug("SQLException hit\nIn Method: " + method + "error:\n" + e);
