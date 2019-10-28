@@ -6,8 +6,10 @@ import java.util.Scanner;
 import com.revature.dao.AccountDao;
 import com.revature.dao.DatabaseDao;
 import com.revature.dao.DatabaseDaoImpl;
+import com.revature.dao.TransactionDao;
 import com.revature.dao.UserDao;
 import com.revature.models.Account;
+import com.revature.models.Transaction;
 
 public class ViewTransactionPrompt implements Prompt {
 
@@ -15,6 +17,7 @@ public class ViewTransactionPrompt implements Prompt {
 	UserDao user = UserDao.currentImplementation;
 	Scanner scan = new Scanner(System.in);
 	AccountDao accountDao = AccountDao.currentImplementation;
+	TransactionDao transactionDao = TransactionDao.currentImplementation;
 
 	@Override
 	public Prompt run() {
@@ -60,6 +63,10 @@ public class ViewTransactionPrompt implements Prompt {
 	}
 
 	private void transactionHistory(int accountId) {
-		dbDao.displayTransactionInformation(accountId, user.getAccountId());
+		System.out.println(dbDao.displayTransactionInformation(accountId, user.getAccountId()));
+		List<Transaction> transactions = transactionDao.getTransactions();
+		for(Transaction trans: transactions) {
+			System.out.println("ID = " + trans.getTransactionId() + ", Amount = $" + String.format("%.2f", trans.getTransactionAmount()));
+		}
 	}
 }

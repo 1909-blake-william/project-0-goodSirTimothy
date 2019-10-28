@@ -434,3 +434,82 @@
 2019-10-27 18:06:25 INFO  MainMenuDriver:20 - class com.revature.prompt.UserCreationPrompt
 2019-10-27 18:06:29 DEBUG DatabaseDaoImpl:162 - SQLException hit
 2019-10-27 18:06:29 INFO  DatabaseDaoImpl:166 - User not found
+2019-10-28 00:43:32 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 00:43:40 INFO  DatabaseDaoImpl:178 - User found
+2019-10-28 00:43:41 INFO  DatabaseDaoImpl:208 - Logging in
+2019-10-28 00:43:41 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 00:43:46 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 00:43:46 INFO  DatabaseDaoImpl:234 - Account information found
+2019-10-28 00:43:50 INFO  DatabaseDaoImpl:234 - Account information found
+2019-10-28 00:46:15 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 00:46:24 INFO  DatabaseDaoImpl:176 - User found
+2019-10-28 00:46:25 INFO  DatabaseDaoImpl:206 - Logging in
+2019-10-28 00:46:25 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 00:46:27 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 00:48:43 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 00:48:50 INFO  DatabaseDaoImpl:179 - User found
+2019-10-28 00:48:50 INFO  DatabaseDaoImpl:209 - Logging in
+2019-10-28 00:48:50 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 00:48:52 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 00:48:52 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:48:57 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:49:43 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 00:49:50 INFO  DatabaseDaoImpl:179 - User found
+2019-10-28 00:49:51 INFO  DatabaseDaoImpl:209 - Logging in
+2019-10-28 00:49:51 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 00:49:59 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 00:49:59 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:50:02 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:51:03 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 00:51:21 INFO  DatabaseDaoImpl:185 - User not found
+2019-10-28 00:51:21 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 00:51:29 INFO  DatabaseDaoImpl:179 - User found
+2019-10-28 00:51:29 INFO  DatabaseDaoImpl:209 - Logging in
+2019-10-28 00:51:29 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 00:51:31 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 00:51:31 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:51:34 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:55:03 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 00:55:10 INFO  DatabaseDaoImpl:179 - User found
+2019-10-28 00:55:10 INFO  DatabaseDaoImpl:209 - Logging in
+2019-10-28 00:55:10 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 00:55:11 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 00:55:11 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:55:14 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:58:50 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 00:58:57 INFO  DatabaseDaoImpl:179 - User found
+2019-10-28 00:58:57 INFO  DatabaseDaoImpl:209 - Logging in
+2019-10-28 00:58:57 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 00:58:59 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 00:58:59 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:59:02 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:59:33 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 00:59:40 INFO  DatabaseDaoImpl:179 - User found
+2019-10-28 00:59:40 INFO  DatabaseDaoImpl:209 - Logging in
+2019-10-28 00:59:40 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 00:59:51 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 00:59:51 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 00:59:57 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 01:02:56 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 01:03:03 INFO  DatabaseDaoImpl:185 - User not found
+2019-10-28 01:03:03 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 01:03:08 INFO  DatabaseDaoImpl:179 - User found
+2019-10-28 01:03:09 INFO  DatabaseDaoImpl:209 - Logging in
+2019-10-28 01:03:09 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 01:03:14 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 01:03:15 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 01:03:19 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 01:04:22 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 01:04:28 INFO  DatabaseDaoImpl:179 - User found
+2019-10-28 01:04:28 INFO  DatabaseDaoImpl:209 - Logging in
+2019-10-28 01:04:28 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 01:04:34 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 01:04:34 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 01:04:38 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 01:06:22 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-28 01:06:34 INFO  DatabaseDaoImpl:179 - User found
+2019-10-28 01:06:35 INFO  DatabaseDaoImpl:209 - Logging in
+2019-10-28 01:06:35 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-28 01:06:37 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
+2019-10-28 01:06:37 INFO  DatabaseDaoImpl:235 - Account information found
+2019-10-28 01:06:41 INFO  DatabaseDaoImpl:235 - Account information found

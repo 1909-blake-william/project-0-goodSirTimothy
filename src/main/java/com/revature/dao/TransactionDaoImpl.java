@@ -7,16 +7,16 @@ import com.revature.models.Transaction;
 
 public class TransactionDaoImpl implements TransactionDao{
 
-	List<Transaction> transaction = new ArrayList<Transaction>();
+	List<Transaction> transactions = new ArrayList<Transaction>();
 	
 	@Override
 	public void setTransaction(int transactionId, float transactionAmount) {
-		transaction.add(new Transaction(transactionId, transactionAmount));
+		transactions.add(new Transaction(transactionId, transactionAmount));
 	}
 
 	@Override
-	public List<Transaction> getAccounts() {
-		return transaction;
+	public List<Transaction> getTransactions() {
+		return transactions;
 	}
 	
 }

@@ -109,6 +109,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
 				System.out.println("INSERT TRUE");
 			}
 			conn.commit();
+			conn.setAutoCommit(true);
 			return true;
 		} catch (SQLException e) {
 			printException("updateBalance", e);
@@ -222,13 +223,13 @@ public class DatabaseDaoImpl implements DatabaseDao {
 			ps.setInt(1, userId);
 
 			ResultSet rs = ps.executeQuery();
-			AccountDao account = AccountDao.currentImplementation;
+			AccountDao accountDao = AccountDao.currentImplementation;
 			while (rs.next()) {
 				int accountId = rs.getInt("account_id");
 				String accountType = rs.getString("account_type");
 				float accountBalance = rs.getFloat("account_balance");
 				int accountStatus = rs.getInt("account_status");
-				account.accountSet(accountId, accountType, accountBalance, accountStatus, userId);
+				accountDao.accountSet(accountId, accountType, accountBalance, accountStatus, userId);
 			}
 
 			log.info("Account information found");
@@ -251,12 +252,16 @@ public class DatabaseDaoImpl implements DatabaseDao {
 			ps.setInt(2, userId);
 			
 			ResultSet rs = ps.executeQuery();
-			Transaction transaction = new Transaction();
+			TransactionDao transactionDao = TransactionDaoImpl.currentImplementation;
 			while (rs.next()) {
 				int transactionId = rs.getInt("transaction_id");
 				float transactionAmount = rs.getFloat("transaction_amount");
-				transaction.setAllTransactionValues(transactionId, transactionAmount);
+				transactionDao.setTransaction(transactionId, transactionAmount);
 			}
+			if (rs.next()) {
+				log.info("Transaction information found");
+			}
+			return true;
 		} catch (SQLException e) {
 			printException("displayTransactionInformation", e);
 		}

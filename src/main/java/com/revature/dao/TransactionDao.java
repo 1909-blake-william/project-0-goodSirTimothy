@@ -18,5 +18,5 @@ public interface TransactionDao {
 	 * 
 	 * @return
 	 */
-	List<Transaction> getAccounts();
+	List<Transaction> getTransactions();
 }

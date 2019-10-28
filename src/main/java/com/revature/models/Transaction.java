@@ -4,11 +4,6 @@ public class Transaction {
 	private int transactionId;
 	private float transactionAmount;
 
-	public Transaction() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	public Transaction(int transactionId, float transactionAmount) {
 		super();
 		this.transactionId = transactionId;
@@ -28,11 +23,6 @@ public class Transaction {
 	}
 
 	public void setTransactionAmount(float transactionAmount) {
-		this.transactionAmount = transactionAmount;
-	}
-	
-	public void setAllTransactionValues(int transactionId, float transactionAmount) {
-		this.transactionId = transactionId;
 		this.transactionAmount = transactionAmount;
 	}
 
