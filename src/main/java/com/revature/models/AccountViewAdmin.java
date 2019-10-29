@@ -4,13 +4,15 @@ public class AccountViewAdmin {
 	private int accountId;
 	private String accountType;
 	private float accountBalance;
+	private String accountStatus;
 	private String username;
 
-	public AccountViewAdmin(int accountId, String accountType, float accountBalance, String username) {
+	public AccountViewAdmin(int accountId, String accountType, float accountBalance, String accountStatus, String username) {
 		super();
 		this.accountId = accountId;
 		this.accountType = accountType;
 		this.accountBalance = accountBalance;
+		this.setAccountStatus(accountStatus);
 		this.username = username;
 	}
 
@@ -87,6 +89,14 @@ public class AccountViewAdmin {
 	public String toString() {
 		return "AccountViewAdmin [accountId=" + accountId + ", accountType=" + accountType + ", accountBalance="
 				+ accountBalance + ", username=" + username + "]";
+	}
+
+	public String getAccountStatus() {
+		return accountStatus;
+	}
+
+	public void setAccountStatus(String accountStatus) {
+		this.accountStatus = accountStatus;
 	}
 
 }

@@ -270,16 +270,19 @@ public class DatabaseDaoImpl implements DatabaseDao {
 
 			PreparedStatement ps = conn.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
+			AdminViewDao adminView = AdminViewDao.currentImplementation;
 			while (rs.next()) {
 				int userId = rs.getInt("user_id");
 				String username = rs.getString("username");
 				String firstName = rs.getString("first_name");
-				String lastName = rs.getString("lastname");
-				if (rs.getInt("") == 1) {
-					String admin = "admin";
+				String lastName = rs.getString("last_name");
+				String admin = "";
+				if (rs.getInt("user_admin") == 1) {
+					admin = "admin";
 				} else {
-					String admin = "default";
+					admin = "default";
 				}
+				adminView.setUserList(userId, username, firstName, lastName, admin);
 			}
 		} catch (SQLException e) {
 			printException("displayAllUsers", e);
@@ -290,16 +293,25 @@ public class DatabaseDaoImpl implements DatabaseDao {
 	@Override
 	public boolean displayAllAccounts() {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			String query = "SELECT * FROM project_0_accounts a"
+			String query = "SELECT * FROM project_0_accounts a "
 					+ "LEFT JOIN project_0_users u ON (a.user_id = u.user_id)";
 
 			PreparedStatement ps = conn.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
+			AdminViewDao adminView = AdminViewDao.currentImplementation;
 			while (rs.next()) {
 				int accountId = rs.getInt("account_id");
 				String accountType = rs.getString("account_type");
 				float accountBalance = rs.getFloat("account_balance");
+				String accountStatus = "";
+				int statusNum = rs.getInt("account_status");
+				if (statusNum == 1) {
+					accountStatus = "ACTIVE";
+				} else {
+					accountStatus = "NOT ACTIVE";
+				}
 				String username = rs.getString("username");
+				adminView.setAccountList(accountId, accountType, accountBalance, accountStatus, username);
 			}
 		} catch (SQLException e) {
 			printException("displayAllAccounts", e);
@@ -310,16 +322,18 @@ public class DatabaseDaoImpl implements DatabaseDao {
 	@Override
 	public boolean displayAllTransactions() {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			String query = "SELECT * FROM project_0_transactions t"
+			String query = "SELECT * FROM project_0_transactions t "
 					+ "LEFT JOIN project_0_users u ON (t.user_id = u.user_id)";
 
 			PreparedStatement ps = conn.prepareStatement(query);
 			ResultSet rs = ps.executeQuery();
+			AdminViewDao adminView = AdminViewDao.currentImplementation;
 			while (rs.next()) {
 				int transactionId = rs.getInt("transaction_id");
 				float transactionAmount = rs.getFloat("transaction_amount");
 				int accountId = rs.getInt("account_id");
 				String username = rs.getString("username");
+				adminView.setTransactionList(transactionId, transactionAmount, accountId, username);
 			}
 		} catch (SQLException e) {
 			printException("displayAllTransactions", e);
