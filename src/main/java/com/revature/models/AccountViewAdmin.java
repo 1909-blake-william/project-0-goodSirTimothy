@@ -5,15 +5,15 @@ public class AccountViewAdmin {
 	private String accountType;
 	private float accountBalance;
 	private String accountStatus;
-	private String username;
+	private String fullName;
 
-	public AccountViewAdmin(int accountId, String accountType, float accountBalance, String accountStatus, String username) {
+	public AccountViewAdmin(int accountId, String accountType, float accountBalance, String accountStatus, String fullName) {
 		super();
 		this.accountId = accountId;
 		this.accountType = accountType;
 		this.accountBalance = accountBalance;
 		this.setAccountStatus(accountStatus);
-		this.username = username;
+		this.fullName = fullName;
 	}
 
 	public int getAccountId() {
@@ -41,11 +41,11 @@ public class AccountViewAdmin {
 	}
 
 	public String getUsername() {
-		return username;
+		return fullName;
 	}
 
 	public void setUsername(String username) {
-		this.username = username;
+		this.fullName = username;
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public class AccountViewAdmin {
 		result = prime * result + Float.floatToIntBits(accountBalance);
 		result = prime * result + accountId;
 		result = prime * result + ((accountType == null) ? 0 : accountType.hashCode());
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		result = prime * result + ((fullName == null) ? 0 : fullName.hashCode());
 		return result;
 	}
 
@@ -77,10 +77,10 @@ public class AccountViewAdmin {
 				return false;
 		} else if (!accountType.equals(other.accountType))
 			return false;
-		if (username == null) {
-			if (other.username != null)
+		if (fullName == null) {
+			if (other.fullName != null)
 				return false;
-		} else if (!username.equals(other.username))
+		} else if (!fullName.equals(other.fullName))
 			return false;
 		return true;
 	}
@@ -88,7 +88,7 @@ public class AccountViewAdmin {
 	@Override
 	public String toString() {
 		return "AccountViewAdmin [accountId=" + accountId + ", accountType=" + accountType + ", accountBalance="
-				+ accountBalance + ", username=" + username + "]";
+				+ accountBalance + ", username=" + fullName + "]";
 	}
 
 	public String getAccountStatus() {

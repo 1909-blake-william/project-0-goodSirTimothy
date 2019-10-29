@@ -19,14 +19,14 @@ public class AdminViewDaoImpl implements AdminViewDao {
 	}
 
 	@Override
-	public void setAccountList(int accountId, String accountType, float accountBalance, String accountStatus, String username) {
-		accountView.add(new AccountViewAdmin(accountId, accountType, accountBalance, accountStatus, username));
+	public void setAccountList(int accountId, String accountType, float accountBalance, String accountStatus, String fullName) {
+		accountView.add(new AccountViewAdmin(accountId, accountType, accountBalance, accountStatus, fullName));
 		
 	}
 
 	@Override
-	public void setTransactionList(int transactionId, float transactionAmount, int accountId, String username) {
-		transactionView.add(new TransactionViewAdmin(transactionId, transactionAmount, accountId, username));
+	public void setTransactionList(int transactionId, float transactionAmount, int accountId, String fullName) {
+		transactionView.add(new TransactionViewAdmin(transactionId, transactionAmount, accountId, fullName));
 		
 	}
 

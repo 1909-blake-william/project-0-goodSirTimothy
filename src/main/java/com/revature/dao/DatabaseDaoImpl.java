@@ -146,7 +146,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
 	@Override
 	public boolean checkUser(String username) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			String query = "SELECT * FROM project_0_users WHERE username = ?";
+			String query = "SELECT * FROM project_0_users WHERE UPPER(username) = UPPER(?)";
 
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setString(1, username);
@@ -166,7 +166,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
 	@Override
 	public boolean checkUserAndPassword(String username, String password) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			String query = "SELECT * FROM project_0_users " + "WHERE username = ? AND user_password = ?";
+			String query = "SELECT * FROM project_0_users " + "WHERE UPPER(username) = UPPER(?) AND user_password = ?";
 
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setString(1, username);
@@ -179,6 +179,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
 			}
 		} catch (SQLException e) {
 			printException("checkUserAndPassword", e);
+			e.printStackTrace();
 		}
 		log.info("User not found");
 		return false;
@@ -187,7 +188,7 @@ public class DatabaseDaoImpl implements DatabaseDao {
 	@Override
 	public void pullUserInformation(String username, String password) {
 		try (Connection conn = ConnectionUtil.getConnection()) {
-			String query = "SELECT * FROM project_0_users " + "WHERE username = ? AND user_password = ?";
+			String query = "SELECT * FROM project_0_users WHERE UPPER(username) = UPPER(?) AND user_password = ?";
 
 			PreparedStatement ps = conn.prepareStatement(query);
 			ps.setString(1, username);
@@ -310,8 +311,9 @@ public class DatabaseDaoImpl implements DatabaseDao {
 				} else {
 					accountStatus = "NOT ACTIVE";
 				}
-				String username = rs.getString("username");
-				adminView.setAccountList(accountId, accountType, accountBalance, accountStatus, username);
+				String firstName = rs.getString("first_name");
+				String lastName = rs.getString("last_name");
+				adminView.setAccountList(accountId, accountType, accountBalance, accountStatus, firstName + ", " + lastName);
 			}
 		} catch (SQLException e) {
 			printException("displayAllAccounts", e);
@@ -332,8 +334,9 @@ public class DatabaseDaoImpl implements DatabaseDao {
 				int transactionId = rs.getInt("transaction_id");
 				float transactionAmount = rs.getFloat("transaction_amount");
 				int accountId = rs.getInt("account_id");
-				String username = rs.getString("username");
-				adminView.setTransactionList(transactionId, transactionAmount, accountId, username);
+				String firstName = rs.getString("first_name");
+				String lastName = rs.getString("last_name");
+				adminView.setTransactionList(transactionId, transactionAmount, accountId, firstName + ", " + lastName);
 			}
 		} catch (SQLException e) {
 			printException("displayAllTransactions", e);

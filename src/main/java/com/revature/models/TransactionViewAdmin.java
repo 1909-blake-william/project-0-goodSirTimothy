@@ -4,14 +4,14 @@ public class TransactionViewAdmin {
 	private int transactionId;
 	private float transactionAmount;
 	private int accountId;
-	private String username;
+	private String fullName;
 
-	public TransactionViewAdmin(int transactionId, float transactionAmount, int accountId, String username) {
+	public TransactionViewAdmin(int transactionId, float transactionAmount, int accountId, String fullName) {
 		super();
 		this.transactionId = transactionId;
 		this.transactionAmount = transactionAmount;
 		this.accountId = accountId;
-		this.username = username;
+		this.fullName = fullName;
 	}
 
 	public int getTransactionId() {
@@ -39,11 +39,11 @@ public class TransactionViewAdmin {
 	}
 
 	public String getUsername() {
-		return username;
+		return fullName;
 	}
 
 	public void setUsername(String username) {
-		this.username = username;
+		this.fullName = username;
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class TransactionViewAdmin {
 		result = prime * result + accountId;
 		result = prime * result + Float.floatToIntBits(transactionAmount);
 		result = prime * result + transactionId;
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		result = prime * result + ((fullName == null) ? 0 : fullName.hashCode());
 		return result;
 	}
 
@@ -72,10 +72,10 @@ public class TransactionViewAdmin {
 			return false;
 		if (transactionId != other.transactionId)
 			return false;
-		if (username == null) {
-			if (other.username != null)
+		if (fullName == null) {
+			if (other.fullName != null)
 				return false;
-		} else if (!username.equals(other.username))
+		} else if (!fullName.equals(other.fullName))
 			return false;
 		return true;
 	}
@@ -83,7 +83,7 @@ public class TransactionViewAdmin {
 	@Override
 	public String toString() {
 		return "TransactionViewAdmin [transactionId=" + transactionId + ", transactionAmount=" + transactionAmount
-				+ ", accountId=" + accountId + ", username=" + username + "]";
+				+ ", accountId=" + accountId + ", username=" + fullName + "]";
 	}
 
 }

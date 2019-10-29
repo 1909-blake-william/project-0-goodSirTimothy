@@ -17,6 +17,7 @@ public class UserMenuPrompt implements Prompt {
 		if (user.getAdmin()) {
 			System.out.println("Press 1 to view all users: ");
 			System.out.println("Press 2 to view all accounts: ");
+			System.out.println("Press 3 to view all transactions: ");
 		} else {
 			System.out.println("Press 1 to add bank account: ");
 			System.out.println("Press 2 to remove bank account: ");
@@ -41,9 +42,16 @@ public class UserMenuPrompt implements Prompt {
 				return new RemoveAccountPrompt();
 			}
 		case "3":
-			return new ViewAccountsPrompt();
+			if (user.getAdmin()) {
+				return new AdminViewTransactionPrompt();
+			} else {
+				return new ViewAccountsPrompt();
+			}
 		case "4":
-			return new ViewTransactionPrompt();
+			if (!user.getAdmin()) {
+				return new ViewTransactionPrompt();
+			}
+			break;
 		case "0":
 			return new LoginPrompt();
 		default:

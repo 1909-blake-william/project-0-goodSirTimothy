@@ -12,9 +12,9 @@ public interface AdminViewDao {
 	
 	void setUserList(int userId, String username, String firstName, String lastname, String admin);
 	
-	void setAccountList(int accountId, String accountType, float accountBalance, String accountStatus, String username);
+	void setAccountList(int accountId, String accountType, float accountBalance, String accountStatus, String fullName);
 	
-	void setTransactionList(int transactionId, float transactionAmount, int accountId, String username);
+	void setTransactionList(int transactionId, float transactionAmount, int accountId, String fullName);
 	
 	List<UsersViewAdmin> getUserList();
 	
