@@ -10,29 +10,32 @@ public class AddAccountPrompt implements Prompt {
 	Scanner scan = new Scanner(System.in);
 	UserDao user = UserDao.currentImplementation;
 	DatabaseDaoImpl dbDao = new DatabaseDaoImpl();
+	private int selection = -1;
 
+	/**
+	 * Prompt for adding new account's that are linked to the user.
+	 */
 	@Override
 	public Prompt run() {
-		int selection = -1;
+		String selectionString = "";
 		while (selection != 0) {
 			System.out.println("What kind of banking account would you like to add:");
-			System.out.println("1. Savings");
-			System.out.println("2. Money Market");
-			System.out.println("3. Checking");
-			System.out.println("0. To go back");
-			selection = scan.nextInt();
-			scan.nextLine();
+			System.out.println("1. Savings" + "\n2. Money Market"
+					+ "\n3. Checking" + "\n0. To go back");
+			selectionString = scan.nextLine();
+			selection = Integer.parseInt(selectionString);
+			
 			while (selection < 0 || selection > 3) {
 				System.out.println("Incorrect input.");
-				System.out.println("1. Savings");
-				System.out.println("2. Money Market");
-				System.out.println("3. Checking");
-				System.out.println("0. To go back");
-				selection = scan.nextInt();
-				scan.nextLine();
+				System.out.println("1. Savings" + "\n2. Money Market"
+						+ "\n3. Checking" + "\n0. To go back");
+				selectionString = scan.nextLine();
+				selection = Integer.parseInt(selectionString);
 			}
+			
 			selection(selection);
 		}
+		// when done
 		return new UserMenuPrompt();
 	}
 	

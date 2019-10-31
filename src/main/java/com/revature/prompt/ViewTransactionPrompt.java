@@ -21,6 +21,7 @@ public class ViewTransactionPrompt implements Prompt {
 
 	@Override
 	public Prompt run() {
+		String selectionString = "";
 		int selection = -1;
 		while (selection != 0) {
 			dbDao.getAccountInformation(user.getAccountId());
@@ -35,8 +36,8 @@ public class ViewTransactionPrompt implements Prompt {
 				}
 				totalAccounts++;
 			}
-			selection = scan.nextInt();
-			scan.nextLine();
+			selectionString = scan.nextLine();
+			selection = Integer.parseInt(selectionString);
 			while (selection < 0 || selection > accounts.size()) {
 				System.out.println("Sorry, that is an invalvid selection. please re-input your number");
 				System.out.println("0. To go back.");
@@ -45,8 +46,8 @@ public class ViewTransactionPrompt implements Prompt {
 					System.out.println((totalAccounts) + ". " + account);
 					totalAccounts++;
 				}
-				selection = scan.nextInt();
-				scan.nextLine();
+				selectionString = scan.nextLine();
+				selection = Integer.parseInt(selectionString);
 			}
 			accountSelectionLogic(selection, accounts);
 			accounts.clear();

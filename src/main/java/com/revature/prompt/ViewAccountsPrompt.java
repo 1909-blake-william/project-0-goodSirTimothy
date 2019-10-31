@@ -18,6 +18,7 @@ public class ViewAccountsPrompt implements Prompt {
 
 	@Override
 	public Prompt run() {
+		String selectionString = "";
 		int selection = -1;
 		while (selection != 0) {
 			dbDao.getAccountInformation(user.getAccountId());
@@ -32,8 +33,8 @@ public class ViewAccountsPrompt implements Prompt {
 				}
 				totalAccounts++;
 			}
-			selection = scan.nextInt();
-			scan.nextLine();
+			selectionString = scan.nextLine();
+			selection = Integer.parseInt(selectionString);
 			while (selection < 0 || selection > accounts.size()) {
 				System.out.println("Sorry, that is an invalvid selection. please re-input your number");
 				System.out.println("0. To go back.");
@@ -42,8 +43,8 @@ public class ViewAccountsPrompt implements Prompt {
 					System.out.println((totalAccounts) + ". " + account);
 					totalAccounts++;
 				}
-				selection = scan.nextInt();
-				scan.nextLine();
+				selectionString = scan.nextLine();
+				selection = Integer.parseInt(selectionString);
 			}
 			promptSelection(selection, accounts);
 			accounts.clear();
@@ -109,6 +110,9 @@ public class ViewAccountsPrompt implements Prompt {
 				amount = scan.nextFloat();
 				scan.nextLine();
 			}
+			if (0 == amount) {
+				break;
+			}
 
 			System.out.println(
 					"Is this correct amount: $" + String.format("%.2f", amount) + "\nEnter 'y' for yes, 'n' for no");
@@ -119,8 +123,6 @@ public class ViewAccountsPrompt implements Prompt {
 					amount = amount * -1;
 				}
 				System.out.println(dbDao.updateBalance(amount, balance, accountId, user.getAccountId()));
-				keepLoopGoing = false;
-			} else if ("0".equals(confirm)) {
 				keepLoopGoing = false;
 			}
 		}

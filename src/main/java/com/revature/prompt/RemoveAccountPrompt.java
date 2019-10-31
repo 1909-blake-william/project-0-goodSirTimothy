@@ -19,6 +19,7 @@ public class RemoveAccountPrompt implements Prompt {
 	@Override
 	public Prompt run() {
 		System.out.println("input which account you would like to delete: ");
+		String selectionString = "";
 		int selection = -1;
 		while (selection != 0) {
 			dbDao.getAccountInformation(user.getAccountId());
@@ -34,8 +35,8 @@ public class RemoveAccountPrompt implements Prompt {
 				}
 				totalAccounts++;
 			}
-			selection = scan.nextInt();
-			scan.nextLine();
+			selectionString = scan.nextLine();
+			selection = Integer.parseInt(selectionString);
 			while (selection < 0 || selection > accounts.size()) {
 				System.out.println("Sorry, that is an invalvid selection. please re-input your number");
 				System.out.println("0. To go back.");
@@ -44,8 +45,8 @@ public class RemoveAccountPrompt implements Prompt {
 					System.out.println((totalAccounts) + ". " + account);
 					totalAccounts++;
 				}
-				selection = scan.nextInt();
-				scan.nextLine();
+				selectionString = scan.nextLine();
+				selection = Integer.parseInt(selectionString);
 			}
 			promptSelection(selection, accounts);
 			accounts.clear();
