@@ -90,8 +90,6 @@ public class DatabaseDaoImpl implements DatabaseDao {
 			result = ps.executeUpdate();
 			if (result < 1) {
 				return false;
-			} else {
-				System.out.println("UPDATE TRUE");
 			}
 
 			query = "INSERT INTO project_0_transactions(transaction_id, transaction_amount, account_id, user_id)"
@@ -105,8 +103,6 @@ public class DatabaseDaoImpl implements DatabaseDao {
 			result = ps.executeUpdate();
 			if (result < 1) {
 				return false;
-			} else {
-				System.out.println("INSERT TRUE");
 			}
 			conn.commit();
 			conn.setAutoCommit(true);

@@ -73,20 +73,19 @@ public class ViewAccountsPrompt implements Prompt {
 	 * @param accountId
 	 */
 	private void displayWithdrawAndDeposit(int id, float balance, int accountId) {
-		int selection = -1;
-		while (selection != 0) {
+		String selection = "";
+		while (!"0".equals(selection)) {
 			System.out.println("1. to deposit money into the account");
 			System.out.println("2. to withdraw money from the account");
 			System.out.println("0. to go back");
 
-			selection = scan.nextInt();
-			scan.nextLine();
-			if (selection == 1) {
+			selection = scan.nextLine();
+			if ("1".equals(selection)) {
 				transactionAmount(id, balance, accountId, "deposited");
-				selection = 0;
-			} else if (selection == 2) {
+				selection = "0";
+			} else if ("2".equals(selection)) {
 				transactionAmount(id, balance, accountId, "withdrawn");
-				selection = 0;
+				selection = "0";
 			}
 		}
 	}

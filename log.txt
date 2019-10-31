@@ -1035,3 +1035,16 @@ java.sql.SQLSyntaxErrorException: ORA-00933: SQL command not properly ended
 2019-10-31 00:00:21 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
 2019-10-31 00:00:27 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewTransactionPrompt
 2019-10-31 00:00:27 INFO  DatabaseDaoImpl:233 - Account information found
+2019-10-31 02:13:22 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-31 02:13:44 INFO  DatabaseDaoImpl:177 - User found
+2019-10-31 02:13:44 INFO  DatabaseDaoImpl:208 - Logging in
+2019-10-31 02:13:44 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-31 02:13:53 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-31 02:13:53 INFO  DatabaseDaoImpl:233 - Account information found
+2019-10-31 02:14:30 INFO  MainMenuDriver:20 - class com.revature.prompt.LoginPrompt
+2019-10-31 02:14:41 INFO  DatabaseDaoImpl:177 - User found
+2019-10-31 02:14:42 INFO  DatabaseDaoImpl:208 - Logging in
+2019-10-31 02:14:42 INFO  MainMenuDriver:20 - class com.revature.prompt.UserMenuPrompt
+2019-10-31 02:14:49 INFO  MainMenuDriver:20 - class com.revature.prompt.ViewAccountsPrompt
+2019-10-31 02:14:49 INFO  DatabaseDaoImpl:233 - Account information found
+2019-10-31 02:15:09 INFO  DatabaseDaoImpl:233 - Account information found
